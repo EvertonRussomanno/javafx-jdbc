@@ -1,4 +1,4 @@
-package com.evertonmartins.javafxjdbc;
+package com.evertonmartins.javafxjdbc.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

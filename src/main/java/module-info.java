@@ -3,6 +3,6 @@ module com.evertonmartins.javafxjdbc {
     requires javafx.fxml;
 
 
-    opens com.evertonmartins.javafxjdbc to javafx.fxml;
-    exports com.evertonmartins.javafxjdbc;
+    exports com.evertonmartins.javafxjdbc.application;
+    opens com.evertonmartins.javafxjdbc.application to javafx.fxml;
 }
