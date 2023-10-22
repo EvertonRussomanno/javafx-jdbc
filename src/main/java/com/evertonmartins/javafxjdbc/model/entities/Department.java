@@ -1,4 +1,4 @@
-package com.evertonmartins.javafxjdbc.model.entities.department;
+package com.evertonmartins.javafxjdbc.model.entities;
 
 import java.io.Serializable;
 
