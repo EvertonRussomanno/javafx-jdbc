@@ -3,6 +3,7 @@ package com.evertonmartins.javafxjdbc.application;
 import com.evertonmartins.javafxjdbc.db.DbIntegrityException;
 import com.evertonmartins.javafxjdbc.listeners.DataChangeListener;
 import com.evertonmartins.javafxjdbc.model.entities.Seller;
+import com.evertonmartins.javafxjdbc.model.services.DepartmentService;
 import com.evertonmartins.javafxjdbc.model.services.SellerService;
 import com.evertonmartins.javafxjdbc.util.Alerts;
 import com.evertonmartins.javafxjdbc.util.Utils;
@@ -112,7 +113,8 @@ public class SellerListController implements Initializable, DataChangeListener {
 
             SellerFormController controller = loader.getController();
             controller.setSeller(obj);
-            controller.setSellerService(new SellerService());
+            controller.setServices(new SellerService(), new DepartmentService());
+            controller.loadAssociatedObjects();
             controller.subscribeDataChangeListener(this);
             controller.updateFormData();
 
@@ -125,6 +127,7 @@ public class SellerListController implements Initializable, DataChangeListener {
             dialogStage.showAndWait();
 
         }catch (IOException e){
+            e.printStackTrace();
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
